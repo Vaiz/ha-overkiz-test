@@ -1,0 +1,34 @@
+{
+  "domain": "overkiz",
+  "name": "Overkiz",
+  "categories": ["hubs_protocols.smart_home_hubs"],
+  "codeowners": ["@Vaiz"],
+  "config_flow": true,
+  "connectivity": ["cloud", "network"],
+  "dependencies": ["application_credentials"],
+  "dhcp": [
+    {
+      "hostname": "gateway*",
+      "macaddress": "F8811A*"
+    }
+  ],
+  "documentation": "https://github.com/Vaiz/ha-overkiz-test",
+  "integration_type": "hub",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/Vaiz/ha-overkiz-test/issues",
+  "loggers": ["boto3", "botocore", "pyoverkiz", "s3transfer"],
+  "requirements": [
+    "pyoverkiz[nexity] @ https://github.com/Vaiz/ha-overkiz-api/archive/d025ac8890afe8c2b0b2cbbb6e46d607d6eea6bc.zip"
+  ],
+  "version": "2026.11.0.1",
+  "zeroconf": [
+    {
+      "name": "gateway*",
+      "type": "_kizbox._tcp.local."
+    },
+    {
+      "name": "gateway*",
+      "type": "_kizboxdev._tcp.local."
+    }
+  ]
+}
